@@ -57,7 +57,7 @@ if [ "$1" = 'tactical-init' ]; then
     sleep 5
   done
 
-  until (echo > /dev/tcp/"${MESH_SERVICE}"/4443) &> /dev/null; do
+  until (echo > /dev/tcp/"${MESH_SERVICE}"/"${MESH_WS_PORT}") &> /dev/null; do
     echo "waiting for meshcentral container to be ready..."
     sleep 5
   done
